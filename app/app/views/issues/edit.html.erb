@@ -1,0 +1,59 @@
+<h1>Edit Issue</h1>
+    <%= form_for :issue, url: issue_path(@issue),method: :patch do |f| %>            
+    
+        <div class="form-group">
+        <label for="issueno" class="col-sm-2">IssueNo</label>  
+        <%= f.text_field :issueno,:class=>"form-control", :style=>"width: 150px", :placeholder=>"E.g. BO-1516-1a" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="fy" class="col-sm-2 control-label">Financial Year</label>  
+        <%= f.text_field :fy,:class=>"form-control", :style=>"width: 150px", :placeholder=>"E.g. FY15/16" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="project" class="col-sm-2 control-label">Project Name</label>  
+        <%= f.text_field :project,:class=>"form-control", :style=>"width: 200px", :placeholder=>"E.g. Back Office Audit" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="risk" class="col-sm-2 control-label">Risk</label>  
+        <%= f.select :risk, options_for_select(['Low','Medium','High','Critical']),:class=>"form-control" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="status" class="col-sm-2 control-label">Status</label>  
+        <%= f.select :status, options_for_select(['Open','In-progress','Pending Review','Closed']),:class=>"form-control" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="controlarea" class="col-sm-2 control-label">Control Area</label>  
+        <%= f.text_field :controlarea,:class=>"form-control", :style=>"width: 500px", :placeholder=>"E.g. Weak Passwords Control" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">Description</label>  
+        <%= f.text_area :description,:class=>"form-control", :rows=>10,:style=>"width: 500px", :placeholder=>"E.g. Passwords do not meet complexity" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="duedate" class="col-sm-2 control-label">Due Date</label>  
+        <%= f.date_field :duedate,:class=>"form-control", :style=>"width: 200px", :placeholder=>"E.g. BO-1516-1a" %>    
+        </div>
+      
+      <div class="form-group">
+        <label for="actionowner" class="col-sm-2 control-label">Action Owner Email</label>  
+        <%= f.text_field :actionowner,:class=>"form-control", :style=>"width: 200px", :placeholder=>"E.g. someone@abc.com" %>    
+        </div>
+
+        <div class="form-group">
+        <label for="lob" class="col-sm-2 control-label">LOB Email</label>  
+        <%= f.text_field :lob,:class=>"form-control", :style=>"width: 200px", :placeholder=>"E.g. someone@abc.com" %>    
+        </div>
+        
+
+        <br><%= f.submit "Update Issue", :class=>"btn btn-primary" %>
+          
+    <% end %>
+    <%= button_to 'Back', indexIssue_path,method: :get , :class=>"btn btn-default" %>        
+    <br>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issueno: MyText
+  fy: MyText
+  project: MyText
+  risk: MyText
+  status: MyText
+  controlarea: MyText
+  description: MyText
+  duedate: 2017-01-01
+  actionowner: MyText
+  lob: MyText
+
+two:
+  issueno: MyText
+  fy: MyText
+  project: MyText
+  risk: MyText
+  status: MyText
+  controlarea: MyText
+  description: MyText
+  duedate: 2017-01-01
+  actionowner: MyText
+  lob: MyText

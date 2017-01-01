@@ -1,0 +1,44 @@
+<h1>Audit Issues</h1>
+<%# link_to '< BACK', dashboardIndex_path %>
+<div>
+<table class="table">
+  <thead>
+    <tr>            
+      <th>IssueNo</th>      
+      <th>FY</th>
+      <th>Project</th>
+      <th>Risk</th>
+      <th>Status</th>
+      <th>ControlArea</th>
+      <th>Description</th>
+      <th>DueDate</th>
+      <th>ActionOwner</th>
+      <th>LOB</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if !@all_issues.nil? %>
+    <% @all_issues.each do |x|%>    
+      <tr> 
+      	<td><%= x.issueno %></td>
+      	<td><%= x.fy %></td>
+      	<td><%= x.project %></td>
+      	<td><%= x.risk %></td>
+      	<td><%= x.status %></td>
+      	<td><%= x.controlarea %></td>
+      	<td><%= x.description %></td>
+      	<td><%= x.duedate %></td>
+      	<td><%= x.actionowner %></td>
+      	<td><%= x.lob %></td>      	
+        <td><%= link_to 'Edit', editIssue_path(:id=>x.id)%></td>  
+        <td><%= link_to 'Delete', deleteIssue_path(:id=>x.id),data: {confirm: 'Are you sure that you want to delete this issue?' } %></td>  
+      </tr>
+      <% end %> 
+  <% end%>
+  </tbody>
+</table>
+</div>
+<br>
+<%= link_to 'Add New Issue',addIssue_path %><br/>
+<%= link_to 'Back',root_path %><br/>

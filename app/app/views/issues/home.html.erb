@@ -1,0 +1,23 @@
+<h1>Issue Tracker Dashboard</h1>
+<%# link_to '< BACK', dashboardIndex_path %>
+<b>Audit Issues By Category</b><br>
+<table class="table">
+<tr>
+<th>Open</th>
+<th>In-progress</th>
+<th>Pending Review</th>
+<th>Closed</th>
+</tr>
+<tr>
+<td><%= Issue.where(:status=>"Open").count %></td>
+<td><%= Issue.where(:status=>"In-progress").count %></td>
+<td><%= Issue.where(:status=>"Pending Review").count %></td>
+<td><%= Issue.where(:status=>"Closed").count %></td>
+</tr>
+</table>
+
+
+
+
+<br><br>
+<%= link_to 'View Audit Issues',indexIssue_path %><br/>
