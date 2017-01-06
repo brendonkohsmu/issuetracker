@@ -11,6 +11,7 @@
       <th>Status</th>
       <th>ControlArea</th>
       <th>Description</th>
+      <th>IARecommendations</th>
       <th>DueDate</th>
       <th>ActionOwner</th>
       <th>LOB</th>
@@ -28,6 +29,7 @@
       	<td><%= x.status %></td>
       	<td><%= x.controlarea %></td>
       	<td><%= x.description %></td>
+      	<td><%= x.IARecommendations %></td>
       	<td><%= x.duedate %></td>
       	<td><%= x.actionowner %></td>
       	<td><%= x.lob %></td>      	
@@ -40,5 +42,5 @@
 </table>
 </div>
 <br>
-<%= link_to 'Add New Issue',addIssue_path %><br/>
-<%= link_to 'Back',root_path %><br/>
+<%= button_to 'New Issue', addIssue_path,method: :get , :class=>"btn btn-primary" %>
+<%= button_to 'Back', root_path,method: :get , :class=>"btn btn-default" %>
